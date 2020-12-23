@@ -464,24 +464,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671391660}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &945394945 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2420693176400522955, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
-  m_PrefabInstance: {fileID: 699563715756989152}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &945394946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945394945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39902221bdbfb1749a7f0cc74e48887d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 8672977037152857242}
 --- !u!1 &1057688758
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +686,25 @@ Transform:
   m_Father: {fileID: 2141866977}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1532902449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2420693176400522955, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
+  m_PrefabInstance: {fileID: 699563715756989152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1532902450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532902449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39902221bdbfb1749a7f0cc74e48887d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 8672977037152857242}
+  isDead: 0
 --- !u!1 &1823539201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1019,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 8238184121195279, guid: 0e80870081a4e6343af8037cad0697b6, type: 3}
-  cake: {fileID: 1537650521440617657, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
   wallType1: {fileID: 8858882369250822789, guid: d824955be56d0594796f75e965f1e98e, type: 3}
   wallType2: {fileID: 3896661344329990321, guid: 4f00b4c4295ea1f4aa2a660380e62aea, type: 3}
   wallType3: {fileID: 6502534948703853197, guid: 4f547b4455c73c3439abea13506a04fc, type: 3}
@@ -1030,7 +1030,9 @@ MonoBehaviour:
   wallType9: {fileID: 9056393290939209971, guid: a91817f6c4eae5a4eb42bb405bad599e, type: 3}
   wallType10: {fileID: 2260904322723675456, guid: 43987635f69f61446add4e53cb5aa123, type: 3}
   surface: {fileID: 2141866978}
+  gameManager: {fileID: 8672977037152857242}
   NumberOfEnemy: 3
+  NumberOfCake: 0
 --- !u!4 &2141866977
 Transform:
   m_ObjectHideFlags: 0
@@ -1087,6 +1089,14 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 545403662}
+    - target: {fileID: 2420693176400522954, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
+      propertyPath: m_Speed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420693176400522954, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
+      propertyPath: m_Radius
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2420693176400522955, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1138,6 +1148,10 @@ PrefabInstance:
     - target: {fileID: 2420693176400522956, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895074452565057660, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
@@ -1975,7 +1989,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current Level : 1'
+  m_text: 'Cake Left : 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2064,7 +2078,7 @@ GameObject:
   - component: {fileID: 8672977036703626273}
   - component: {fileID: 8672977036703626272}
   m_Layer: 5
-  m_Name: Current Level
+  m_Name: Cake Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2086,7 +2100,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49, y: 0}
+  m_AnchoredPosition: {x: 65, y: 0}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8672977036871187322
@@ -2547,8 +2561,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 8672977036983774777}
+  numberCakeToCollect: {fileID: 8672977036703626272}
+  health_1: {fileID: 8672977036590150460}
+  health_2: {fileID: 8672977036239488359}
+  health_3: {fileID: 8672977035325468356}
   score: 0
   health: 3
+  numberCake: 0
 --- !u!114 &8672977037221719624
 MonoBehaviour:
   m_ObjectHideFlags: 0
