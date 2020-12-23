@@ -13,7 +13,6 @@ public class PlayerController_Click : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject movementMark;
     private GameObject mark;
-    private bool isMoveConfirmed;
 
     private void Start() {
         agent = gameObject.GetComponent<NavMeshAgent>();
