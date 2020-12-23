@@ -46,10 +46,15 @@ public class LevelGenerator : MonoBehaviour
         float randomFloat = Random.value;
         int randomInt = (int) (randomFloat * 10);
 
-        Debug.Log("random: " + randomInt);
-
-        if(randomInt == 0) {
+        // to count the number of cake in each unique generated maze
+        if (randomInt == 0 || randomInt == 1 || randomInt == 6 || randomInt == 8) {
           NumberOfCake += 16;
+        } else if (randomInt == 2 || randomInt == 5 || randomInt == 7 || randomInt == 9) {
+          NumberOfCake += 15;
+        } else if (randomInt == 3) {
+          NumberOfCake += 19;
+        } else if (randomInt == 4) {
+          NumberOfCake += 17;
         }
 
         Vector3 pos = new Vector3(x - width / 2f, 0, y - height / 2f);
