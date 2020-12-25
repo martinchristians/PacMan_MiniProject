@@ -22,15 +22,14 @@ public class Enemy : MonoBehaviour
     private PlayerManagement player;
     [SerializeField] private ENEMY_STATE state = ENEMY_STATE.IDLE;
     private NavMeshAgent agent;
-    private MeshRenderer mesh;
+    public MeshRenderer mesh;
     private Rigidbody rb;
-    private float seeRange = 12, dieRange = 3, timer;
+    private float seeRange = 15, dieRange = 3.25f, timer;
 
     private void Start() {
         player = GameObject.Find("Player").GetComponent<PlayerManagement>();
 
         agent = GetComponent<NavMeshAgent>();
-        mesh = GetComponent<MeshRenderer>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -76,6 +75,7 @@ public class Enemy : MonoBehaviour
                 break;
 
             case ENEMY_STATE.DIE:
+                // when enemy hit player, the enemy will be enable for 8s then it will appear again
                 StartCoroutine(WaitToRespawn(8));
                 break;
         }

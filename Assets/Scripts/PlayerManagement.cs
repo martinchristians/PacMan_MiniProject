@@ -10,11 +10,13 @@ using UnityEngine;
 
 public class PlayerManagement : MonoBehaviour
 {
-    public GameManager gameManager;
+    private GameManager gameManager;
     private int score, health, cake;
     public bool isDead;
 
     private void Start() {
+        gameManager = GameObject.Find("Canvas").GetComponent<GameManager>();
+
         score = gameManager.GetScore();
         health = gameManager.GetHealth();
 

@@ -75,7 +75,14 @@ public class LevelGenerator : MonoBehaviour
             NumberOfEnemy--;
 
             Vector3 pos = new Vector3(x - width / 2f, 0, y - height / 2f);
-            Instantiate(enemy, pos, Quaternion.identity, enemySocket.transform);
+            Instantiate(enemy, pos, Quaternion.Euler(0, 180, 0), enemySocket.transform);
+          }
+
+          // if on the last respawn area the number of enemy, that should be spawn not enough, force spawn on last spawn area
+          if (x == 92.5f && y == 77.5f) {
+            for (int i = 0; i <= NumberOfEnemy; i++) {
+              Instantiate(enemy, new Vector3(42.5f, 0, 27.5f), Quaternion.Euler(0, 180, 0), enemySocket.transform);
+            }
           }
         }
       }

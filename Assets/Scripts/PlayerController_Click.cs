@@ -9,13 +9,14 @@ using UnityEngine.AI;
 
 public class PlayerController_Click : MonoBehaviour
 {
-    public Camera cam;
+    private Camera cam;
     public NavMeshAgent agent;
     public GameObject movementMark;
     private GameObject mark;
 
     private void Start() {
         agent = gameObject.GetComponent<NavMeshAgent>();
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
     private void Update() {

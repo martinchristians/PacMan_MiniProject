@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour
     public void StartGame() {
         SceneManager.LoadScene("Main", LoadSceneMode.Single);
     }
+    
+    private void Update() {
+        if (numberCake == 0) {
+            Debug.Log("You WIN");
+        }
+    }
 
     public void RestartGame() {
         score = 0;
@@ -85,11 +91,5 @@ public class GameManager : MonoBehaviour
     public void SetNumberCake(int cake) {
         numberCake = cake;
         numberCakeToCollect.text = "Cake Left : " + numberCake.ToString();
-    }
-
-    private void Update() {
-        if (numberCake == 0) {
-            Debug.Log("You WIN");
-        }
     }
 }
