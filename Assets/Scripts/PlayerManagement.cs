@@ -17,16 +17,15 @@ public class PlayerManagement : MonoBehaviour
     private void Start() {
         gameManager = GameObject.Find("Canvas").GetComponent<GameManager>();
 
-        score = gameManager.GetScore();
         health = gameManager.GetHealth();
 
         cake = gameManager.GetNumberCake();
     }
 
-    public void AddScore() {
-        score++;
+    public void AddScore(int value) {
+        score = score + value;
 
-        if (score % 10 == 0) {
+        if (score % 50 == 0) {
             AddOneLife();
         }
 

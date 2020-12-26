@@ -61,7 +61,6 @@ public class LevelGenerator : MonoBehaviour
         Instantiate(listType[randomInt], pos, Quaternion.identity, wallSocket.transform);
       }
     }
-
     gameManager.SetNumberCake(NumberOfCake);
 
     // loop to generate enemy on random position
