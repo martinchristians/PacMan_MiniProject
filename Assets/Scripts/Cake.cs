@@ -14,9 +14,15 @@ public class Cake : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
-            player.AddScore();
-            player.MinusCake();
-            Destroy(gameObject);
+            if (gameObject.tag == "BigCake") {
+                player.AddScore(5);
+                player.MinusCake();
+                Destroy(gameObject);
+            } else {
+                player.AddScore(1);
+                player.MinusCake();
+                Destroy(gameObject);
+            }
         }
     }
 }

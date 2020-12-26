@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Cake
   - BigCake
   layers:
   - Default
@@ -16,8 +15,8 @@ TagManager:
   - UI
   - Wall
   - Cake
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 

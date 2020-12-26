@@ -252,9 +252,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cake (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1537650521440617657, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
+      propertyPath: m_TagString
+      value: BigCake
+      objectReference: {fileID: 0}
     - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -438,9 +454,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cake (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1537650521440617657, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
+      propertyPath: m_TagString
+      value: BigCake
+      objectReference: {fileID: 0}
     - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -996,9 +1028,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cake (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1537650521440617657, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5584298387902045661, guid: b40caea3462574a4fa5692cb309005ca, type: 3}
       propertyPath: m_LocalPosition.x
