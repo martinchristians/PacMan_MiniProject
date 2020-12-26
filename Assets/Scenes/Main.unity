@@ -225,17 +225,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2420693176400522954, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
-      propertyPath: m_WalkableMask
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2420693176400522955, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2420693176400522955, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2420693176400522956, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
       propertyPath: m_RootOrder
@@ -243,11 +235,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2420693176400522956, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.5
+      value: -5.25
       objectReference: {fileID: 0}
     - target: {fileID: 2420693176400522956, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2420693176400522956, guid: 295d8cf0224d028458d14eca38047f73, type: 3}
       propertyPath: m_LocalPosition.z

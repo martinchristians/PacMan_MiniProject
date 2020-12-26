@@ -50,6 +50,10 @@ public class GameManager : MonoBehaviour
         // pop up die -> panel
     }
 
+    public int GetScore() {
+        return score;
+    }
+
     public void SetScore(int newScore) {
         score = newScore;
         scoreText.text = "Score : " + newScore.ToString();
