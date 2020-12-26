@@ -11,3 +11,7 @@
 # Audio
 
 ### Audio was downloaded from [freesound](https://freesound.org/)
+
+# Model
+
+### PacMan and Ghost model were created by myself with [Maya Software](https://www.autodesk.de/)

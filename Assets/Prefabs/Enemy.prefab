@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8238184121195278}
   - component: {fileID: 8238183582057057}
   - component: {fileID: 8238183582057056}
+  - component: {fileID: 6942205557356425971}
   - component: {fileID: 2098469700578395002}
   m_Layer: 0
   m_Name: Enemy
@@ -86,6 +87,25 @@ NavMeshAgent:
   m_BaseOffset: 0.035
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
+--- !u!95 &6942205557356425971
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238184121195279}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37a8cdd64c9b1ff47bc3573940a56054, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2098469700578395002
 MonoBehaviour:
   m_ObjectHideFlags: 0

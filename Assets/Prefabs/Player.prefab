@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 2420693176400522959}
   - component: {fileID: 2420693176400522953}
   - component: {fileID: 2420693176400522954}
+  - component: {fileID: 7959400234009195544}
   - component: {fileID: 2420693176400522952}
   - component: {fileID: 1532902450}
   m_Layer: 0
@@ -169,6 +170,25 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
+--- !u!95 &7959400234009195544
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420693176400522955}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 722588b90f29140498931b7eeed6cded, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2420693176400522952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf5eededeb52b84fa027a417d3ebc6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   agent: {fileID: 2420693176400522954}
   movementMark: {fileID: 3757897301313880194, guid: 02639fea2bf304741b9b1d819d8ad9d8, type: 3}
 --- !u!114 &1532902450
@@ -196,7 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39902221bdbfb1749a7f0cc74e48887d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   isDead: 0
 --- !u!1 &5209711480907251496
 GameObject:

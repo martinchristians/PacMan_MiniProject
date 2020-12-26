@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     private PlayerManagement player;
     [SerializeField] private ENEMY_STATE state = ENEMY_STATE.IDLE;
     private NavMeshAgent agent;
-    public MeshRenderer mesh;
+    [SerializeField] private MeshRenderer mesh;
     private Rigidbody rb;
     private float seeRange = 15, dieRange = 3.25f, timer;
 
