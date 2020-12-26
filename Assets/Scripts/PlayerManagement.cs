@@ -11,7 +11,7 @@ using UnityEngine;
 public class PlayerManagement : MonoBehaviour
 {
     private GameManager gameManager;
-    private int score, health, cake;
+    private int score = -1, health, cake;
     public bool isDead;
 
     private void Start() {
