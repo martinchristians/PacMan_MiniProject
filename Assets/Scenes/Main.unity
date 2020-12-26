@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: c8c67aa3ce6639e4dbc76dc73e2115c5, type: 2}
 --- !u!1 &286124404
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,7 +3003,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.25
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 144c44f97f1ca2a4d932be4e638bec23, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!224 &3416498863932145608
 RectTransform:
   m_ObjectHideFlags: 0
