@@ -91,7 +91,6 @@ public class LevelGenerator : MonoBehaviour
         Instantiate(listType[randomInt], pos, Quaternion.identity, wallSocket.transform);
       }
     }
-    gameManager.SetNumberCake(NumberOfCake);
 
     ////////////////////////
     ///  
@@ -147,5 +146,9 @@ public class LevelGenerator : MonoBehaviour
         }
       }
     }
+
+    // initialize value
+    gameManager.SetPlayer();
+    gameManager.SetNumberCake(NumberOfCake);
   }
 }

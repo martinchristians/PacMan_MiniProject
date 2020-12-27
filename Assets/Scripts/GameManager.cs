@@ -21,14 +21,30 @@ public enum DIFFICULTY {
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText, numberCakeToCollect;
-    public Image health_1,  health_2, health_3;
-    public int score, health = 3, numberCake, sizeBoard;
-    public AudioMixer audioMixer;
-    public GameObject mainPanel, winPanel, losePanel;
-    public Transform cam;
     private DIFFICULTY difficulty = DIFFICULTY.THREE;
-    public LevelGenerator difficulty1, difficulty2, difficulty3 ;
+    [SerializeField] private LevelGenerator levelGenerator;
+    private GameObject farCamera;
+    public AudioMixer audioMixer;
+
+    [Header ("Panel UI")]
+    public GameObject mainPanel;
+    public GameObject winPanel, losePanel;
+
+    [Header ("Health")]
+    public int health = 3;
+    public Image health_1,  health_2, health_3;
+
+    [Header ("Score")]
+    public int score;
+    public int numberCake;
+    public TextMeshProUGUI scoreText, numberCakeToCollect;
+
+    [Header ("Player")]
+    public GameObject player;
+
+    private void Start() {
+        farCamera = GameObject.Find("Main Camera");
+    }
 
     public void RestartGame() {
         score = 0;
@@ -66,7 +82,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-// NOT YET WORKING
     public void Difficulty(Button button) {
 
         if (button.name == "Button 1") {
@@ -83,22 +98,29 @@ public class GameManager : MonoBehaviour
 
         switch(difficulty){
             case DIFFICULTY.ONE:
-                Debug.Log("difficultiy One");
-                cam.transform.position = new Vector3(-22.5f, 47.5f, -50);
+                Debug.Log("difficulty One");
+                levelGenerator = GameObject.Find("Level Design 1").GetComponent<LevelGenerator>();
 
-                difficulty1.difficultyOne();
+                levelGenerator.difficultyOne();
+                farCamera.GetComponent<Transform>().transform.position = new Vector3(-22.5f, 47.5f, -50);
+
                 break;
 
             case DIFFICULTY.TWO:
-                Debug.Log("difficultiy Two");
-                cam.transform.position = new Vector3(-14, 68, -50);
+                Debug.Log("difficulty Two");
+                levelGenerator = GameObject.Find("Level Design 2").GetComponent<LevelGenerator>();
 
-                difficulty2.difficultyTwo();
+                levelGenerator.difficultyTwo();
+                farCamera.GetComponent<Transform>().transform.position = new Vector3(-14, 68, -50);
+
                 break;
 
             case DIFFICULTY.THREE:
-                Debug.Log("difficultiy Three");
-                difficulty3.difficultyThree();
+                Debug.Log("difficulty Three");
+
+                levelGenerator = GameObject.Find("Level Design 3").GetComponent<LevelGenerator>();
+                levelGenerator.difficultyThree();
+
                 break;
         }
     }
@@ -144,4 +166,37 @@ public class GameManager : MonoBehaviour
         else
             GameWin();
     }
+
+    public void SetPlayer() {
+        player = GameObject.Find("Player(Clone)");
+    }
+
+    public void SetCameraClose() {
+        player.transform.GetChild(1).transform.GetComponent<Camera>().enabled = true;
+        player.transform.GetChild(0).transform.GetChild(3).transform.GetComponent<Canvas>().enabled = true;
+        player.GetComponent<PlayerController_Click>().enabled = false;
+        player.GetComponent<PlayerController_Pad>().enabled = true;
+
+        farCamera.GetComponent<Camera>().enabled = false;
+    }
+
+    public void SetCameraFar() {
+        player.transform.GetChild(1).transform.GetComponent<Camera>().enabled = false;
+        player.transform.GetChild(0).transform.GetChild(3).transform.GetComponent<Canvas>().enabled = false;
+        player.GetComponent<PlayerController_Click>().enabled = true;
+        player.GetComponent<PlayerController_Pad>().enabled = false;
+
+        farCamera.GetComponent<Camera>().enabled = true;
+    }
+/*
+    // for canvas on player
+    public LevelGenerator GetLevelGenerator() {
+        return levelGenerator;
+    }
+
+    public LevelGenerator SetLevelGenerator(LevelGenerator script) {
+        script = levelGenerator;
+        return script;
+    }
+*/
 }
