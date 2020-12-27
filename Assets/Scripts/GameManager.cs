@@ -8,7 +8,7 @@ using TMPro;
 using UnityEngine.EventSystems;
 
 /// <summary>
-/// this script is responsible for all interaction with UI Element
+/// this script is responsible for all UI Element interaction on game
 /// 
 /// @author : Martin Christian Solihin
 /// </summary>
@@ -26,11 +26,9 @@ public class GameManager : MonoBehaviour
     public int score, health = 3, numberCake, sizeBoard;
     public AudioMixer audioMixer;
     public GameObject mainPanel, winPanel, losePanel;
+    public Transform cam;
     private DIFFICULTY difficulty = DIFFICULTY.THREE;
-
-    public void StartGame() {
-        SceneManager.LoadScene("Main", LoadSceneMode.Single);
-    }
+    public LevelGenerator difficulty1, difficulty2, difficulty3 ;
 
     public void RestartGame() {
         score = 0;
@@ -44,10 +42,6 @@ public class GameManager : MonoBehaviour
         health = 3;
 
         SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
-    }
-
-    public void ExitGame() {
-        Application.Quit();
     }
 
     public void GameOver() {
@@ -90,17 +84,21 @@ public class GameManager : MonoBehaviour
         switch(difficulty){
             case DIFFICULTY.ONE:
                 Debug.Log("difficultiy One");
-                SetSize(25);
+                cam.transform.position = new Vector3(-22.5f, 47.5f, -50);
+
+                difficulty1.difficultyOne();
                 break;
 
             case DIFFICULTY.TWO:
                 Debug.Log("difficultiy Two");
-                SetSize(50);
+                cam.transform.position = new Vector3(-14, 68, -50);
+
+                difficulty2.difficultyTwo();
                 break;
 
             case DIFFICULTY.THREE:
                 Debug.Log("difficultiy Three");
-                SetSize(100);
+                difficulty3.difficultyThree();
                 break;
         }
     }
@@ -145,13 +143,5 @@ public class GameManager : MonoBehaviour
             numberCakeToCollect.text = "Cake Left : " + numberCake.ToString();
         else
             GameWin();
-    }
-
-    public int GetSize() {
-        return sizeBoard;
-    }
-
-    public void SetSize(int size) {
-        sizeBoard = size;
     }
 }
