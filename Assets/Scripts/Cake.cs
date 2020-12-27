@@ -10,7 +10,7 @@ public class Cake : MonoBehaviour
 {
     private PlayerManagement player;
     private void Start() {
-        player = GameObject.Find("Player").GetComponent<PlayerManagement>();
+        player = GameObject.Find("Player(Clone)").GetComponent<PlayerManagement>();
     }
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {

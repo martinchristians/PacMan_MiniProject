@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using TMPro;
 using UnityEngine.EventSystems;
 
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText, numberCakeToCollect;
     public Image health_1,  health_2, health_3;
     public int score, health = 3, numberCake, sizeBoard;
+    public AudioMixer audioMixer;
+    public GameObject mainPanel, winPanel, losePanel;
     private DIFFICULTY difficulty = DIFFICULTY.THREE;
 
     public void StartGame() {
@@ -48,12 +51,25 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver() {
-        // pause game
-        // pop up die -> panel
+        mainPanel.SetActive(false);
+        losePanel.SetActive(true);
     }
 
     public void GameWin() {
-        Debug.Log("You WIN");
+        mainPanel.SetActive(false);
+        winPanel.SetActive(true);
+    }
+
+    public void SetVolume(float vol) {
+        audioMixer.SetFloat("mainVolume", vol);
+    }
+
+    public void Pause() {
+        Time.timeScale = 0;
+    }
+
+    public void Resume() {
+        Time.timeScale = 1;
     }
 
 // NOT YET WORKING

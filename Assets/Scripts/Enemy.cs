@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     private float seeRange = 15, dieRange = 3.25f, timer;
 
     private void Start() {
-        player = GameObject.Find("Player").GetComponent<PlayerManagement>();
+        player = GameObject.Find("Player(Clone)").GetComponent<PlayerManagement>();
 
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();

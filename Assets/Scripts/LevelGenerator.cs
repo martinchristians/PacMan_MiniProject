@@ -9,12 +9,13 @@ using UnityEngine.AI;
 
 public class LevelGenerator : MonoBehaviour
 {
-  public GameObject enemy, wallType1, wallType2, wallType3, wallType4, wallType5, wallType6, wallType7, wallType8, wallType9, wallType10;
+  public GameObject player, enemy, wallType1, wallType2, wallType3, wallType4, wallType5, wallType6, wallType7, wallType8, wallType9, wallType10;
   private List<GameObject> listType; 
   private GameObject wallSocket, enemySocket;
   public NavMeshSurface surface;
   public GameManager gameManager;
   public int NumberOfEnemy = 3, NumberOfCake;
+  private bool isPlayerSpawned;
   private float width = 100, height = 100;
 
   private void Awake() {
@@ -39,7 +40,14 @@ public class LevelGenerator : MonoBehaviour
   }
 
   public void GenerateLevel() {
-    gameManager.GetSize();
+    // NOT YET FUNCTION
+    //gameManager.GetSize();
+    
+    ////////////////////////
+    ///  
+    /// Level GENERATOR
+    /// 
+    ////////////////////////
     
     // loop through the board area and initiate wall by a random number
     for (float x = 12.5f; x <= width; x += 25) {
@@ -65,24 +73,39 @@ public class LevelGenerator : MonoBehaviour
     }
     gameManager.SetNumberCake(NumberOfCake);
 
+    ////////////////////////
+    ///  
+    /// PLAYER AND ENEMY GENERATOR
+    /// 
+    ////////////////////////
+
     // loop to generate enemy on random position
     for (float x = 17.5f; x <= width; x += 25) {
-      for (float y = 27.5f; y <= height; y += 25) {
-        if (NumberOfEnemy != 0) { 
-          // generate a random number between 0 and 1
-          float randomFloat = Random.value;
-          
+      for (float y = 2.5f; y <= height; y += 25) {
+        Vector3 pos = new Vector3(x - width / 2f, 0, y - height / 2f);
+        float randomFloat = Random.value;
+
+        if (y == 2.5f && !isPlayerSpawned) {
           if (randomFloat >= 0.7f) {
-            NumberOfEnemy--;
+            Instantiate(player, pos, Quaternion.identity, transform.parent);
 
-            Vector3 pos = new Vector3(x - width / 2f, 0, y - height / 2f);
-            Instantiate(enemy, pos, Quaternion.Euler(0, 180, 0), enemySocket.transform);
+            isPlayerSpawned = true;
+          } else if (x == 92.5f && y == 2.5f) { // if on the last respawn area the player still not spawn, force spawn on last spawn area
+            Instantiate(player, pos, Quaternion.identity, transform.parent);
           }
+        } else if (y >= 27.5f) {
+          if (NumberOfEnemy != 0) { 
+            if (randomFloat >= 0.7f) {
+              NumberOfEnemy--;
 
-          // if on the last respawn area the number of enemy, that should be spawn not enough, force spawn on last spawn area
-          if (x == 92.5f && y == 77.5f) {
-            for (int i = 0; i < NumberOfEnemy; i++) {
-              Instantiate(enemy, new Vector3(42.5f, 0, 27.5f), Quaternion.Euler(0, 180, 0), enemySocket.transform);
+              Instantiate(enemy, pos, Quaternion.Euler(0, 180, 0), enemySocket.transform);
+            }
+
+            // if on the last respawn area the number of enemy, that should be spawn not enough, force spawn on last spawn area
+            if (x == 92.5f && y == 77.5f) {
+              for (int i = 0; i < NumberOfEnemy; i++) {
+                Instantiate(enemy, new Vector3(42.5f, 0, 27.5f), Quaternion.Euler(0, 180, 0), enemySocket.transform);
+              }
             }
           }
         }

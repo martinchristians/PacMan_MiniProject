@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6305282726615361144}
   - component: {fileID: 5470963253180989023}
   - component: {fileID: 7240134598631542561}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PacMan Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7959400234009195544}
   - component: {fileID: 2420693176400522952}
   - component: {fileID: 1532902450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 5052865918663976188}
   - component: {fileID: 1512086455425429030}
   - component: {fileID: 8689206134347367490}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PacMan Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6448791209825689923}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PacMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 3333155375323923065}
   - component: {fileID: 3767904944303569793}
   - component: {fileID: 5628362436715808523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
