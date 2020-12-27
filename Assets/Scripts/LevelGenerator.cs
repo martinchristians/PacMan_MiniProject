@@ -18,27 +18,29 @@ public class LevelGenerator : MonoBehaviour
   private float width = 100, height = 100;
 
   private void Awake() {
-  wallSocket = GameObject.Find("Walls");
-  enemySocket = GameObject.Find("Enemies");
-  
-  listType = new List<GameObject>();
-  listType.Add(wallType1);
-  listType.Add(wallType2);
-  listType.Add(wallType3);
-  listType.Add(wallType4);
-  listType.Add(wallType5);
-  listType.Add(wallType6);
-  listType.Add(wallType7);
-  listType.Add(wallType8);
-  listType.Add(wallType9);
-  listType.Add(wallType10);
+    wallSocket = GameObject.Find("Walls");
+    enemySocket = GameObject.Find("Enemies");
+    
+    listType = new List<GameObject>();
+    listType.Add(wallType1);
+    listType.Add(wallType2);
+    listType.Add(wallType3);
+    listType.Add(wallType4);
+    listType.Add(wallType5);
+    listType.Add(wallType6);
+    listType.Add(wallType7);
+    listType.Add(wallType8);
+    listType.Add(wallType9);
+    listType.Add(wallType10);
 
-  GenerateLevel();
+    GenerateLevel();
 
-  surface.BuildNavMesh();
+    surface.BuildNavMesh();
   }
 
   public void GenerateLevel() {
+    gameManager.GetSize();
+    
     // loop through the board area and initiate wall by a random number
     for (float x = 12.5f; x <= width; x += 25) {
       for (float y = 12.5f; y <= height; y += 25) {

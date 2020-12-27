@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// this script is responsible for all interaction with UI Element
@@ -11,11 +12,18 @@ using TMPro;
 /// @author : Martin Christian Solihin
 /// </summary>
 
+public enum DIFFICULTY {
+    ONE,
+    TWO,
+    THREE
+}
+
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText, numberCakeToCollect;
     public Image health_1,  health_2, health_3;
-    public int score, health = 3, numberCake;
+    public int score, health = 3, numberCake, sizeBoard;
+    private DIFFICULTY difficulty = DIFFICULTY.THREE;
 
     public void StartGame() {
         SceneManager.LoadScene("Main", LoadSceneMode.Single);
@@ -46,6 +54,39 @@ public class GameManager : MonoBehaviour
 
     public void GameWin() {
         Debug.Log("You WIN");
+    }
+
+// NOT YET WORKING
+    public void Difficulty(Button button) {
+
+        if (button.name == "Button 1") {
+            difficulty = DIFFICULTY.ONE;
+        } else if (button.name == "Button 2") {
+            difficulty = DIFFICULTY.TWO;
+        } else if (button.name == "Button 3") {
+            difficulty = DIFFICULTY.THREE;
+        }
+
+        ColorBlock colors = button.colors;
+        colors.normalColor = Color.white;
+        button.colors = colors;
+
+        switch(difficulty){
+            case DIFFICULTY.ONE:
+                Debug.Log("difficultiy One");
+                SetSize(25);
+                break;
+
+            case DIFFICULTY.TWO:
+                Debug.Log("difficultiy Two");
+                SetSize(50);
+                break;
+
+            case DIFFICULTY.THREE:
+                Debug.Log("difficultiy Three");
+                SetSize(100);
+                break;
+        }
     }
 
     public void SetScore(int newScore) {
@@ -88,5 +129,13 @@ public class GameManager : MonoBehaviour
             numberCakeToCollect.text = "Cake Left : " + numberCake.ToString();
         else
             GameWin();
+    }
+
+    public int GetSize() {
+        return sizeBoard;
+    }
+
+    public void SetSize(int size) {
+        sizeBoard = size;
     }
 }

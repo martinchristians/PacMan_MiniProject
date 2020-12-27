@@ -3003,7 +3003,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.25
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 19c1b8132e6997b4c924ec3ddec2bdd5, type: 2}
 --- !u!224 &3416498863932145608
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4420,6 +4420,7 @@ MonoBehaviour:
   score: 0
   health: 3
   numberCake: 0
+  sizeBoard: 0
 --- !u!114 &8672977037221719624
 MonoBehaviour:
   m_ObjectHideFlags: 0
