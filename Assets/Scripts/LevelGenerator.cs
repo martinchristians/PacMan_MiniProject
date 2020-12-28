@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /// <summary>
+/// 
 /// @author : Martin Christian Solihin
+/// 
 /// </summary>
 
 public class LevelGenerator : MonoBehaviour
@@ -22,6 +24,7 @@ public class LevelGenerator : MonoBehaviour
     wallSocket = GameObject.Find("Walls");
     enemySocket = GameObject.Find("Enemies");
     
+    // input all availabe wall types for then later be called in LevelGenerator method
     listType = new List<GameObject>();
     listType.Add(wallType1);
     listType.Add(wallType2);
@@ -34,6 +37,12 @@ public class LevelGenerator : MonoBehaviour
     listType.Add(wallType9);
     listType.Add(wallType10);
   }
+
+    /// <summary>
+    /// 
+    /// After choose the difficulty, the GameManager will call one out of three Methods below, then generate the level, player and enemy
+    /// 
+    /// </summary>
 
   public void difficultyOne() {
     dividedBy = 2;
@@ -63,11 +72,11 @@ public class LevelGenerator : MonoBehaviour
     float maxHeight = height / dividedBy;
     float maxWidth = width / dividedBy;
     
-    ////////////////////////
-    ///  
-    /// Level GENERATOR
+    /// <summary>
     /// 
-    ////////////////////////
+    /// level generator
+    /// 
+    /// </summary>
     
     // loop through the board area and initiate wall by a random number
     for (float x = 12.5f; x <= maxWidth; x += 25) {
@@ -92,11 +101,11 @@ public class LevelGenerator : MonoBehaviour
       }
     }
 
-    ////////////////////////
-    ///  
-    /// PLAYER AND ENEMY GENERATOR
+    /// <summary>
     /// 
-    ////////////////////////
+    /// Player and enemy generator
+    /// 
+    /// </summary>
 
     // loop to generate player and enemy on random position
     for (float x = 17.5f; x <= maxWidth; x += 25) {
@@ -147,7 +156,12 @@ public class LevelGenerator : MonoBehaviour
       }
     }
 
-    // initialize value
+    /// <summary>
+    /// 
+    /// Initialize value in Game Manager
+    /// 
+    /// </summary>
+    
     gameManager.SetPlayer();
     gameManager.SetNumberCake(NumberOfCake);
   }

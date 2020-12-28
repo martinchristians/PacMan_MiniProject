@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
 /// <summary>
-/// this script is responsible for all UI Element in MainMenu
+/// this script is responsible for UI Elements in MainMenu
 /// 
 /// @author : Martin Christian Solihin
 /// </summary>

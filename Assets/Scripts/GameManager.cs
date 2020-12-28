@@ -11,6 +11,7 @@ using UnityEngine.EventSystems;
 /// this script is responsible for all UI Element interaction on game
 /// 
 /// @author : Martin Christian Solihin
+/// 
 /// </summary>
 
 public enum DIFFICULTY {
@@ -46,7 +47,14 @@ public class GameManager : MonoBehaviour
         farCamera = GameObject.Find("Main Camera");
     }
 
+    /// <summary>
+    /// 
+    /// These methods are for buttons in the UI
+    /// 
+    /// </summary>
+
     public void RestartGame() {
+        Time.timeScale = 1;
         score = 0;
         health = 3;
 
@@ -54,6 +62,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void BackMainMenu() {
+        Time.timeScale = 1;
         score = 0;
         health = 3;
 
@@ -61,11 +70,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver() {
+        Time.timeScale = 0;
         mainPanel.SetActive(false);
         losePanel.SetActive(true);
     }
 
     public void GameWin() {
+        Time.timeScale = 0;
         mainPanel.SetActive(false);
         winPanel.SetActive(true);
     }
@@ -81,6 +92,13 @@ public class GameManager : MonoBehaviour
     public void Resume() {
         Time.timeScale = 1;
     }
+
+    /// <summary>
+    /// 
+    /// The both Methods are responsible to determine which level should be generated. Then after choose the level, it will call the script LevelGenerator
+    /// Also need to initialize the clone player afterwards
+    /// 
+    /// </summary>
 
     public void Difficulty(Button button) {
 
@@ -125,6 +143,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetPlayer() {
+        player = GameObject.Find("Player(Clone)");
+    }
+
+    /// <summary>
+    /// 
+    /// These methods are responsible for UI Elements (score, point left, health)
+    /// 
+    /// </summary>
+
     public void SetScore(int newScore) {
         score = newScore;
         scoreText.text = "Score : " + newScore.ToString();
@@ -167,36 +195,21 @@ public class GameManager : MonoBehaviour
             GameWin();
     }
 
-    public void SetPlayer() {
-        player = GameObject.Find("Player(Clone)");
-    }
+    /// <summary>
+    /// 
+    /// To change the play mode, between close and far mode play
+    /// 
+    /// </summary>
 
     public void SetCameraClose() {
-        player.transform.GetChild(1).transform.GetComponent<Camera>().enabled = true;
-        player.transform.GetChild(0).transform.GetChild(3).transform.GetComponent<Canvas>().enabled = true;
-        player.GetComponent<PlayerController_Click>().enabled = false;
-        player.GetComponent<PlayerController_Pad>().enabled = true;
-
-        farCamera.GetComponent<Camera>().enabled = false;
+        //player.GetComponent<PlayerController_Click>().enabled = false;
+        farCamera.SetActive(false);
+        player.transform.GetChild(1).transform.gameObject.SetActive(true);
     }
 
     public void SetCameraFar() {
-        player.transform.GetChild(1).transform.GetComponent<Camera>().enabled = false;
-        player.transform.GetChild(0).transform.GetChild(3).transform.GetComponent<Canvas>().enabled = false;
-        player.GetComponent<PlayerController_Click>().enabled = true;
-        player.GetComponent<PlayerController_Pad>().enabled = false;
-
-        farCamera.GetComponent<Camera>().enabled = true;
+        //player.GetComponent<PlayerController_Click>().enabled = true;
+        farCamera.SetActive(true);
+        player.transform.GetChild(1).transform.gameObject.SetActive(false);
     }
-/*
-    // for canvas on player
-    public LevelGenerator GetLevelGenerator() {
-        return levelGenerator;
-    }
-
-    public LevelGenerator SetLevelGenerator(LevelGenerator script) {
-        script = levelGenerator;
-        return script;
-    }
-*/
 }

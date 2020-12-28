@@ -4,22 +4,25 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /// <summary>
+/// 
 /// @author : Martin Christian Solihin
+/// 
 /// </summary>
 
 public class PlayerController_Click : MonoBehaviour
 {
-    private Camera cam;
+    public Camera cam;
     public NavMeshAgent agent;
     public GameObject movementMark;
     private GameObject mark;
 
     private void Start() {
         agent = gameObject.GetComponent<NavMeshAgent>();
-        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
     private void Update() {
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+
         if (Input.GetMouseButtonDown(0)) {
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);

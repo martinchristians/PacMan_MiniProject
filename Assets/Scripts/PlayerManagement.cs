@@ -43,7 +43,9 @@ public class PlayerManagement : MonoBehaviour
 
         if (health == -1) {
             isDead = true;
-            Destroy(gameObject);
+            gameObject.transform.GetChild(0).transform.GetChild(0).transform.GetComponent<MeshRenderer>().enabled = false;
+            gameObject.transform.GetChild(0).transform.GetChild(1).transform.GetComponent<MeshRenderer>().enabled = false;
+            gameObject.transform.GetChild(0).transform.GetChild(2).transform.GetComponent<MeshRenderer>().enabled = false;
             gameManager.GameOver();
         } else {
             gameManager.SetHealth(health);
