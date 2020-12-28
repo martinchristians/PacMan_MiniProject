@@ -44,9 +44,19 @@ public class GameManager : MonoBehaviour
     [Header ("Player")]
     public GameObject player;
 
+    [Header ("Setting")]
+    private float valueAudio;
+    private bool isThereAudio;
+    public Slider sliderVolume;
+
     private void Start() {
         farCamera = GameObject.Find("Main Camera");
         animator = gameObject.GetComponent<Animator>();
+
+        // to get the current value of audio that might already change in Main menu
+        isThereAudio = audioMixer.GetFloat("mainVolume", out valueAudio);
+        if (isThereAudio)
+            sliderVolume.value = valueAudio;
     }
 
     /// <summary>
@@ -93,6 +103,15 @@ public class GameManager : MonoBehaviour
 
     public void Resume() {
         Time.timeScale = 1;
+    }
+
+    // this Methos is used to prevent the player get distance in pause mode.
+    public void ShowCollider() {
+        player.transform.GetChild(1).transform.GetChild(0).transform.GetComponent<Collider>().enabled = true;
+    }
+
+    public void HideCollider() {
+        player.transform.GetChild(1).transform.GetChild(0).transform.GetComponent<Collider>().enabled = false;
     }
 
     /// <summary>
