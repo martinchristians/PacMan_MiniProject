@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     private DIFFICULTY difficulty = DIFFICULTY.THREE;
     [SerializeField] private LevelGenerator levelGenerator;
     private GameObject farCamera;
+    private Animator animator;
     public AudioMixer audioMixer;
 
     [Header ("Panel UI")]
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     private void Start() {
         farCamera = GameObject.Find("Main Camera");
+        animator = gameObject.GetComponent<Animator>();
     }
 
     /// <summary>
@@ -211,5 +213,16 @@ public class GameManager : MonoBehaviour
         //player.GetComponent<PlayerController_Click>().enabled = true;
         farCamera.SetActive(true);
         player.transform.GetChild(1).transform.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// 
+    /// To activate the animator
+    /// 
+    /// </summary>
+
+    public void SetPlayAnimation() {
+        animator.StopPlayback();
+        animator.Play("GameTransition");
     }
 }
