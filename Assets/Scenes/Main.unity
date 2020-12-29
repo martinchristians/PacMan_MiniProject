@@ -329,11 +329,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 13431312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7afe0a78c6941714ea45f7da1752c0e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c3737cc767e91e48a220cb67a42314d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 300
-  rotationSpeed: 20
   player: {fileID: 0}
 --- !u!1 &54977299
 GameObject:
@@ -1647,7 +1645,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 460005304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edbc570932a05e549acd9c496002230d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c3737cc767e91e48a220cb67a42314d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
@@ -2081,7 +2079,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 487321848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aac4c26fc00d0941b1bf42c2de1b153, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c3737cc767e91e48a220cb67a42314d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
@@ -5167,7 +5165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1378050188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fda14fde48a924c9e4bd03ce6b8092, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c3737cc767e91e48a220cb67a42314d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
@@ -8001,54 +7999,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 13431317}
-        m_TargetAssemblyTypeName: PadMovement, Assembly-CSharp
-        m_MethodName: InitializePlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 487321853}
-        m_TargetAssemblyTypeName: PadMoveDown, Assembly-CSharp
-        m_MethodName: InitializePlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 460005309}
-        m_TargetAssemblyTypeName: PadRotateRight, Assembly-CSharp
-        m_MethodName: InitializePlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1378050193}
-        m_TargetAssemblyTypeName: PadRotateLeft, Assembly-CSharp
-        m_MethodName: InitializePlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1 &4688186376091210602
 GameObject:
   m_ObjectHideFlags: 0
@@ -8459,7 +8409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1.0999756, y: 7.000122}
+  m_AnchoredPosition: {x: 1.0998535, y: 7.000122}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8672977035522780694
@@ -8633,7 +8583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5.0999756, y: -10.299988}
+  m_AnchoredPosition: {x: 5.0998535, y: -10.300049}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8672977036239488356
