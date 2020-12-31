@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
-using UnityEngine.EventSystems;
+using UnityEngine.AI;
 
 /// <summary>
 /// this script is responsible for all UI Element interaction on game
@@ -223,15 +223,19 @@ public class GameManager : MonoBehaviour
     /// </summary>
 
     public void SetCameraClose() {
-        //player.GetComponent<PlayerController_Click>().enabled = false;
         farCamera.SetActive(false);
         player.transform.GetChild(1).transform.gameObject.SetActive(true);
+
+        player.GetComponent<PlayerController_Click>().enabled = false;
+        player.GetComponent<NavMeshAgent>().enabled = false;
     }
 
     public void SetCameraFar() {
-        //player.GetComponent<PlayerController_Click>().enabled = true;
         farCamera.SetActive(true);
         player.transform.GetChild(1).transform.gameObject.SetActive(false);
+
+        player.GetComponent<PlayerController_Click>().enabled = true;
+        player.GetComponent<NavMeshAgent>().enabled = true;
     }
 
     /// <summary>

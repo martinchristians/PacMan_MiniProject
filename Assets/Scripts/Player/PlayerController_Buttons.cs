@@ -13,29 +13,27 @@ using UnityEngine.EventSystems;
 public class PlayerController_Buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private GameObject player;
-    private Rigidbody rb;
     private bool isUpClicked, isLeftClicked, isRightClicked, isDownClicked;
+    private float addRotation = 60, speed = 7f;
 
     public void Start() {
         player = GameObject.Find("Player(Clone)");
-        rb = player.GetComponent<Rigidbody>();
     }
 
-    // For moving forward and backward, fixed update will be used due to physic engine
+    // For moving forward and backward, fixed update will be used due to physic engine (collide with walls)
     private void FixedUpdate() {
         if (isUpClicked) {
-            Debug.Log("UP");
+            player.transform.Translate(0, 0, speed * Time.deltaTime);
         } else if (isDownClicked) {
-            Debug.Log("DOWN");
+            player.transform.Translate(0, 0, -speed * Time.deltaTime);
         }
     }
 
-    // For rigt and left rotation, update method is enough
     private void Update() {
         if (isRightClicked) {
-            Debug.Log("RIGHT");
+            player.transform.Rotate(0, (player.transform.rotation.y + addRotation) * Time.deltaTime, 0);
         } else if (isLeftClicked) {
-            Debug.Log("LEFT");
+            player.transform.Rotate(0, (player.transform.rotation.y - addRotation) * Time.deltaTime, 0);
         }
     }
 
