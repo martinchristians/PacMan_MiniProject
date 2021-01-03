@@ -9411,7 +9411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGenerator: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: f05099c20e78ee54e9189d63cdc538b1, type: 2}
-  mainPanel: {fileID: 0}
+  mainPanel: {fileID: 1917210139}
   winPanel: {fileID: 1654391053}
   losePanel: {fileID: 1313526947}
   health: 3
